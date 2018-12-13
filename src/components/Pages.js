@@ -2,8 +2,6 @@ import React from 'react'
 import {userData, photo, cocktails} from '../data.js'
 import {Card, Button, Image, Loader} from 'semantic-ui-react'
 
-/*No need to code in here! These are merely presentational components.*/
-
 export const Profile = () => (
   <Card fluid>
     <Card.Content textAlign="center">
@@ -57,7 +55,7 @@ export class Pokemon extends React.Component {
 
   getRandomPokemon = () => {
     const pokeId = Math.round(Math.random()*802)
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://pokeapi.co/api/v2/pokemon/${pokeId}`)
       .then(res => res.json())
       .then(pokemon => this.setState({pokemon: pokemon}))
   }
